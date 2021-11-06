@@ -5,7 +5,9 @@
   "license": "MIT",
   "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint src"
   },
   "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com/)",
   "engineStrict": true,
