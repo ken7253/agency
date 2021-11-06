@@ -1,17 +1,24 @@
-import path from 'path';
 import { Console } from 'console';
-import readPreset from './function/readPreset';
+import { category, DefineMessage} from './types/DefineMessage';
+import formatter from './function/formatter';
+import getMessage from './function/fetchMessage';
 
 export default class Message extends Console {
-  constructor() {
+  dictionary: DefineMessage;
+  constructor(dictionary?: DefineMessage) {
     super({ stdout: process.stdout });
+    this.dictionary = dictionary || {};
   }
 
   /**
    * プリセットとして登録したメッセージを呼び出すメソッド
    * @param messageId 呼び出すメッセージのID
    */
-  preset(messageId: string){
-    readPreset(path.join(__dirname, '..', '..', 'static', 'messages.json'));
+  preset(category: category, messageId: string):void {
+    const data = this.dictionary[category];
+    if(data) {
+      const text = getMessage(data.message, messageId);
+      process.stdout.write(formatter(category, text[0]));
+    }
   }
 }
