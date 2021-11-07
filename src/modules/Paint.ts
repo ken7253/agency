@@ -1,4 +1,4 @@
-import { ConsoleColor,ConsoleBackground,ConsoleStyle } from "./types/ConsoleStyle";
+import { ConsoleColor,ConsoleBackground,ConsoleStyle } from "../types/ConsoleStyle";
 
 export default class Paint {
   readonly textColor: ConsoleColor = {
