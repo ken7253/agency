@@ -23,13 +23,20 @@ export default class Paint {
     white: '\u001b[47m',
   };
 
+  readonly reset: string = '\u001b[0m';
+
   compatibility: boolean;
   constructor(compatibility = false) {
     this.compatibility = compatibility;
   }
 
-  paint(text:string, style?:ConsoleStyle):string {
-    const postPaint = `${text}`;
+  paint(text:string, style:ConsoleStyle):string {
+    const currentStyle = {
+      color: this.textColor[style.color],
+      background: this.backgroundColor[style.background],
+      bold: style.bold ? '\u001b[1m' : '',
+    }
+    const postPaint = `${Object.values(currentStyle).join('')}${text}${this.reset}`;
 
     return postPaint;
   }
