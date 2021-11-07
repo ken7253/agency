@@ -1,7 +1,7 @@
 import data from '../data/message';
 import getMessage from '../../src/function/getMessage';
 
-describe('getMessage.ts', () => {
+describe('🤔getMessage.ts', () => {
   test('Single lang', () => {
     const message = data.error.message;
     expect(getMessage(message, 'TEST_ERROR_MESSAGE')).toStrictEqual(["This is a test error message."]);
