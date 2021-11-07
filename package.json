@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "test": "jest"
   },
   "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com/)",
   "engineStrict": true,
@@ -15,13 +16,16 @@
     "node": "16.13.0"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.11.6",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
     "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.3.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   }
