@@ -13,6 +13,9 @@ const config: Config.InitialOptions = {
       tsconfig: 'tsconfig.json',
     },
   },
+  collectCoverage: true,
+  coverageDirectory: 'coverage',
+  coverageProvider: 'v8'
 };
 
 export default config;

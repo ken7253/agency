@@ -1,7 +1,7 @@
 import { Console } from 'console';
 import { category, DefineMessage} from './types/DefineMessage';
 import formatter from './function/formatter';
-import getMessage from './function/fetchMessage';
+import getMessage from './function/getMessage';
 
 export default class Speak extends Console {
   dictionary: DefineMessage;
