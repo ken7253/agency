@@ -1,4 +1,4 @@
-import { textList } from '../types/DefineMessage';
+import type { textList } from '../types/DefineMessage';
 
 export default function getMessage(
   data: textList,
