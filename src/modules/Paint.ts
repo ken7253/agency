@@ -1,6 +1,10 @@
 import type { ConsoleColor, ConsoleBackground, ConsoleStyle } from "../types/ConsoleStyle";
 
+/**
+ * Class for decorating the console.
+ */
 export default class Paint {
+  /** Control character to change text color. */
   readonly textColor: ConsoleColor = {
     black: '\u001b[30m',
     red: '\u001b[31m',
@@ -12,6 +16,7 @@ export default class Paint {
     white: '\u001b[37m',
   };
 
+  /** Control characters to change the background color. */
   readonly backgroundColor: ConsoleBackground = {
     black: '\u001b[40m',
     red: '\u001b[41m',
@@ -23,13 +28,21 @@ export default class Paint {
     white: '\u001b[47m',
   };
 
+  /** Control character to reset the style. */
   readonly reset: string = '\u001b[0m';
 
+  /** Compatibility with older consoles. */
   compatibility: boolean;
   constructor(compatibility = false) {
     this.compatibility = compatibility;
   }
 
+  /**
+   * Method to return with control characters for style.
+   * @param text Character string to display.
+   * @param style Style definitions to apply.
+   * @returns string with control characters for style.
+   */
   paint(text:string, style:ConsoleStyle):string {
     const currentStyle = {
       color: this.textColor[style.color],
