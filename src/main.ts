@@ -1,25 +1,60 @@
-import { Console } from 'console';
 import formatter from './function/formatter';
 import getMessage from './function/getMessage';
 
-import type { category, DefineMessage} from './types/DefineMessage';
+import type { category, DefineMessage } from './types/DefineMessage';
 
-export default class Speak extends Console {
+export default class Speak {
   dictionary: DefineMessage;
+  category: category | null;
+  readonly output: Console["log"];
   constructor(dictionary?: DefineMessage) {
-    super({ stdout: process.stdout });
     this.dictionary = dictionary || {};
+    this.output = console.log;
+    this.category = null;
   }
 
-  /**
-   * プリセットとして登録したメッセージを呼び出すメソッド
-   * @param messageId 呼び出すメッセージのID
-   */
-  preset(category: category, messageId: string):void {
-    const data = this.dictionary[category];
-    if(data) {
-      const text = getMessage(data.message, messageId);
-      process.stdout.write(formatter(category, text[0]));
+  log(messageId: string): void {
+    this.category = 'log';
+    const data = this.dictionary.log?.message;
+    if (data) {
+      const text = getMessage(data, messageId);
+      this.output(formatter(this.category, text[0]));
+    }
+  }
+
+  error(messageId: string): void {
+    this.category = 'error';
+    const data = this.dictionary.error?.message;
+    if (data) {
+      const text = getMessage(data, messageId);
+      this.output(formatter(this.category, text[0]));
+    }
+  }
+
+  warn(messageId: string): void {
+    this.category = 'warn';
+    const data = this.dictionary.warn?.message;
+    if (data) {
+      const text = getMessage(data, messageId);
+      this.output(formatter(this.category, text[0]));
+    }
+  }
+
+  complete(messageId: string): void {
+    this.category = 'complete';
+    const data = this.dictionary.complete?.message;
+    if (data) {
+      const text = getMessage(data, messageId);
+      this.output(formatter(this.category, text[0]));
+    }
+  }
+
+  running(messageId: string): void {
+    this.category = 'running';
+    const data = this.dictionary.running?.message;
+    if (data) {
+      const text = getMessage(data, messageId);
+      this.output(formatter(this.category, text[0]));
     }
   }
 }
