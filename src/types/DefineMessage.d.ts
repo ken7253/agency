@@ -28,4 +28,7 @@ export interface DefineMessage {
     prefix?: string,
     message: textList,
   }
+  settings?: {
+    defaultLang: string,
+  }
 }
