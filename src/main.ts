@@ -6,10 +6,12 @@ import type { category, DefineMessage } from './types/DefineMessage';
 export default class Speak {
   dictionary: DefineMessage;
   category: category | null;
+  setting: DefineMessage['settings'];
   readonly output: Console['log'];
 
   constructor(dictionary?: DefineMessage) {
     this.dictionary = dictionary || {};
+    this.setting = dictionary?.settings;
     this.output = console.log;
     this.category = null;
   }
@@ -18,8 +20,8 @@ export default class Speak {
     this.category = cat;
     const data = this.dictionary[cat]?.message;
     if (data) {
-      const text = getMessage(data, messageId);
-      this.output(formatter(this.category, text[0]));
+      const text = getMessage(data, messageId, this.setting?.defaultLang);
+      this.output(formatter(this.category, text));
     }
   }
 
