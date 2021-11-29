@@ -22,8 +22,8 @@ import defineMessage from './dictionary';
 // Pass a dictionary file as an argument.
 const speak = new Speak(defineMessage);
 
-speak.preset('error', 'TEST_ERROR_MESSAGE');
-// => [ERROR] This is a test error message.
+speak.error('TEST_ERROR_MESSAGE');
+// console => [ERROR] This is a test error message.
 ```
 
 ## LICENSE
