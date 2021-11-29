@@ -1,4 +1,4 @@
-import Paint from "../../src/modules/Paint";
+import Paint from "../../src/lib/Paint";
 
 const paint = new Paint();
 

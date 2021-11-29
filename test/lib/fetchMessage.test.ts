@@ -1,5 +1,5 @@
 import data from '../data/message';
-import getMessage from '../../src/function/getMessage';
+import getMessage from '../../src/lib/getMessage';
 
 describe('🤔getMessage.ts', () => {
   test('Single lang', () => {

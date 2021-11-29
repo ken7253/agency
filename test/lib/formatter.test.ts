@@ -1,4 +1,4 @@
-import formatter from "../../src/function/formatter";
+import formatter from "../../src/lib/formatter";
 
 describe('🤔formatter.ts', () => {
   test('output', () => {
