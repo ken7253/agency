@@ -21,6 +21,7 @@ export default class Speak {
     const data = this.dictionary[cat]?.message;
     if (data) {
       const text = getMessage(data, messageId, this.setting?.defaultLang);
+      /** @todo カテゴリごとの色出力 */
       this.output(formatter(this.category, text));
     }
   }
