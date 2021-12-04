@@ -8,7 +8,9 @@
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "run-s test:*",
+    "test:unit": "jest",
+    "test:e2e": "ts-node test/run.ts"
   },
   "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com/)",
   "engineStrict": true,
