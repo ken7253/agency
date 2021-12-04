@@ -2,6 +2,8 @@ import type { ConsoleColor, ConsoleBackground, ConsoleStyle } from "../types/Con
 
 /**
  * Class for decorating the console.
+ * @todo add this.backgroundColor = 'none'
+ * @todo this.bold => option
  */
 export default class Paint {
   /** Control character to change text color. */
