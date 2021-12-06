@@ -1,8 +1,16 @@
 import type { textList } from '../types/DefineMessage';
 
+/**
+ *
+ * @param data Dictionary data
+ * @param messageId Search message ID
+ * @param lang require iso-639-1 code
+ * @returns
+ */
 export default function getMessage(
   data: textList,
   messageId: string,
+  /** @todo add langrage type check */
   lang = 'en'
 ) {
   const result = data.map((value) => {
