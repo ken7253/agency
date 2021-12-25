@@ -1,7 +1,11 @@
 import formatter from './lib/formatter';
 import getMessage from './lib/getMessage';
+import Paint from './lib/Paint';
+import style from './configs/defaultStyle'
 
 import type { category, DefineMessage } from './types/DefineMessage';
+
+const paint = new Paint();
 
 export default class Speak {
   dictionary: DefineMessage;
@@ -21,8 +25,7 @@ export default class Speak {
     const data = this.dictionary[cat]?.message;
     if (data) {
       const text = getMessage(data, messageId, this.setting?.defaultLang);
-      /** @todo カテゴリごとの色出力 */
-      this.output(formatter(this.category, text));
+      this.output(paint.paint(formatter(this.category, text), style[cat]));
     }
   }
 
