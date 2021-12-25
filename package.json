@@ -1,6 +1,6 @@
 {
   "name": "ventriloquy",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "license": "MIT",
   "main": "dist/main.js",
@@ -15,9 +15,8 @@
     "test:e2e": "ts-node test/run.ts"
   },
   "author": "ken7253 <ken7253@gmail.com> (https://dairoku-studio.com/)",
-  "engineStrict": true,
   "engines": {
-    "node": "16.13.0"
+    "node": "^14.18.0"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
