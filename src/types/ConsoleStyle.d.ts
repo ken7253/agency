@@ -18,6 +18,7 @@ export interface ConsoleBackground {
   magenta: '\u001b[45m';
   cyan: '\u001b[46m';
   white: '\u001b[47m';
+  none: '';
 }
 
 export interface ConsoleStyle {
