@@ -1,0 +1,14 @@
+.github/
+.vscode/
+src/
+test/
+.eslintrc.json
+.eslintignnore
+.node-version
+.prettierrc.json
+.prettierignore
+.jest.config.ts
+tsconfig.json
+.editorconfig
+.gitignore
+.gitattributes
