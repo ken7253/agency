@@ -1,9 +1,10 @@
 # Ventriloquy
 
-## Introduction
+"Ventriloquy" is a dictionary-based standard output library.
 
-"Ventriloquy" is a dictionary-based standard output library.  
-The library is also compatible with the Node.js console class.
+## docs
+
+- [for Japanese](./README_JP.md)
 
 ## How to use
 
@@ -11,10 +12,23 @@ The library is also compatible with the Node.js console class.
 
 ### Creating a dictionary file
 
+#### dictionary.js
+
+```js:dictionary.js
+const dictionary {
+  error: {
+    prefix: "ERROR", // <string>
+    text: 'This is a test error message.', // <string>
+  },
+  log: {...},
+}
+export default dictionary:
+```
+
 If you want to use the preset function, you need to define a dictionary file in advance.  
 There are no naming rules, but it is recommended to save the file as a separate file for ease of maintenance.
 
-```ts
+```js
 // import library and dictionary.
 import Speak from 'ventriloquy';
 import defineMessage from './dictionary';
